@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مستشفى الرعاية الطبية | رعاية صحية متكاملة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        :root { --green: #10b981; }
+        .hero-slide { 
+            background-size: cover; 
+            background-position: center; 
+            transition: opacity 1.2s ease-in-out;
+        }
+        .nav-scrolled { 
+            background: rgba(255,255,255,0.98) !important; 
+            backdrop-filter: blur(12px);
+        }
+        .card-hover:hover { 
+            transform: translateY(-12px); 
+            box-shadow: 0 20px 25px -5px rgb(16 185 129 / 0.15); 
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="bg-white shadow sticky top-0 z-50 transition-all">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-emerald-600 rounded-2xl flex items-center justify-center text-3xl text-white">🏥</div>
+                <div>
+                    <h1 class="text-2xl font-bold text-emerald-700">مستشفى الرعاية</h1>
+                    <p class="text-xs text-gray-500">الطبية</p>
+                </div>
+            </div>
+            <div class="hidden md:flex gap-8 text-lg">
+                <a href="index.html" class="text-emerald-700 font-medium">الرئيسية</a>
+                <a href="about.html" class="hover:text-emerald-600 transition">من نحن</a>
+                <a href="#services" class="hover:text-emerald-600 transition">خدماتنا</a>
+                <a href="#doctors" class="hover:text-emerald-600 transition">أطباؤنا</a>
+                <a href="contact.html" class="hover:text-emerald-600 transition">اتصل بنا</a>
+            </div>
+            <a href="tel:01012345678" class="bg-emerald-600 text-white px-6 py-3 rounded-2xl hover:bg-emerald-700 transition flex items-center gap-2">
+                <i class="fas fa-phone"></i> حجز موعد
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Slider -->
+    <section class="relative h-screen overflow-hidden">
+        <div id="slides" class="absolute inset-0"></div>
+        <div class="absolute inset-0 bg-gradient-to-l from-black/70 via-black/40 to-transparent"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center">
+            <div class="max-w-xl" data-aos="fade-up">
+                <h2 class="text-5xl md:text-6xl font-bold text-white leading-tight mb-6">صحتك.. أولويتنا الأولى</h2>
+                <p class="text-xl text-white/90 mb-8">رعاية طبية متكاملة بأحدث التقنيات والكوادر المتميزة</p>
+                <div class="flex gap-4">
+                    <a href="#doctors" class="bg-white text-emerald-700 px-8 py-4 rounded-2xl font-semibold text-lg">أطباؤنا</a>
+                    <a href="contact.html" class="border-2 border-white text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/10">اتصل بنا</a>
+                </div>
+            </div>
+        </div>
+
+        <button onclick="prevSlide()" class="absolute left-6 top-1/2 z-20 bg-black/40 text-white p-4 rounded-full hover:bg-black/60"><i class="fas fa-chevron-left"></i></button>
+        <button onclick="nextSlide()" class="absolute right-6 top-1/2 z-20 bg-black/40 text-white p-4 rounded-full hover:bg-black/60"><i class="fas fa-chevron-right"></i></button>
+    </section>
+
+    <!-- Contact Info Bar -->
+    <div class="bg-emerald-700 text-white py-3 text-sm">
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-x-8 gap-y-2">
+            <a href="tel:01012345678" class="flex items-center gap-2 hover:text-emerald-100">
+                <i class="fas fa-phone"></i> 0101 234 5678
+            </a>
+            <a href="tel:0223456789" class="flex items-center gap-2 hover:text-emerald-100">
+                <i class="fas fa-phone"></i> 02-23456789
+            </a>
+            <a href="mailto:info@alrayaamedical.com" class="flex items-center gap-2 hover:text-emerald-100">
+                <i class="fas fa-envelope"></i> info@alrayaamedical.com
+            </a>
+            <div class="flex items-center gap-2">
+                <i class="fas fa-location-dot"></i> ٢٣ شارع الهرم - الجيزة - القاهرة
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-emerald-800" data-aos="fade-up">خدماتنا الطبية</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-hover bg-white border border-gray-100 rounded-3xl p-8" data-aos="fade-up">
+                    <i class="fa-solid fa-heart-pulse text-5xl text-emerald-600 mb-6"></i>
+                    <h3 class="text-2xl font-semibold mb-3">قسم القلب</h3>
+                    <p class="text-gray-600">علاج شامل لأمراض القلب والأوعية الدموية</p>
+                </div>
+                <div class="card-hover bg-white border border-gray-100 rounded-3xl p-8" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fa-solid fa-baby text-5xl text-emerald-600 mb-6"></i>
+                    <h3 class="text-2xl font-semibold mb-3">النساء والتوليد</h3>
+                    <p class="text-gray-600">رعاية متكاملة للمرأة والطفل</p>
+                </div>
+                <div class="card-hover bg-white border border-gray-100 rounded-3xl p-8" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fa-solid fa-brain text-5xl text-emerald-600 mb-6"></i>
+                    <h3 class="text-2xl font-semibold mb-3">المخ والأعصاب</h3>
+                    <p class="text-gray-600">تشخيص وعلاج متطور</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors -->
+    <section id="doctors" class="py-20 bg-emerald-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-4 text-emerald-800" data-aos="fade-up">أطباؤنا المتميزون</h2>
+            <div class="grid md:grid-cols-4 gap-8" id="doctors-grid"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-emerald-900 text-white pt-16 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-emerald-600 rounded-2xl flex items-center justify-center text-3xl text-white">🏥</div>
+                        <h2 class="text-2xl font-bold">مستشفى الرعاية الطبية</h2>
+                    </div>
+                    <p class="text-gray-300">رعاية صحية بمعايير عالمية</p>
+                    <p class="text-emerald-400 mt-2">www.alrayaamedical.com</p>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">روابط سريعة</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white">الرئيسية</a></li>
+                        <li><a href="about.html" class="hover:text-white">من نحن</a></li>
+                        <li><a href="#services" class="hover:text-white">خدماتنا</a></li>
+                        <li><a href="#doctors" class="hover:text-white">أطباؤنا</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">بيانات التواصل</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><i class="fas fa-phone"></i> 02-23456789</li>
+                        <li><i class="fas fa-mobile-screen-button"></i> 0101 234 5678</li>
+                        <li><i class="fas fa-envelope"></i> info@alrayaamedical.com</li>
+                        <li><i class="fas fa-location-dot"></i> ٢٣ شارع الهرم - الجيزة - القاهرة</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">واتساب</h3>
+                    <a href="https://wa.me/201012345678" target="_blank" 
+                       class="inline-flex items-center gap-3 bg-[#25D366] px-6 py-4 rounded-2xl hover:bg-green-600 transition text-lg">
+                        <i class="fab fa-whatsapp text-3xl"></i>
+                        <span>تواصل معنا</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center text-gray-400 text-sm mt-16 pt-8 border-t border-emerald-800">
+                © 2026 مستشفى الرعاية الطبية - جميع الحقوق محفوظة
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/201012345678" target="_blank" 
+       class="fixed bottom-6 left-6 bg-[#25D366] w-16 h-16 rounded-2xl flex items-center justify-center text-4xl text-white shadow-2xl hover:scale-110 transition z-50">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 900 });
+
+        // Hero Slider
+        let current = 0;
+        const slidesData = [
+            "https://images.unsplash.com/photo-1512678080530-7760d81faba6",
+            "https://images.unsplash.com/photo-1559757148-5e9952c1b7f4",
+            "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5"
+        ];
+
+        const slidesContainer = document.getElementById('slides');
+        slidesData.forEach((url, i) => {
+            const slide = document.createElement('div');
+            slide.className = `hero-slide absolute inset-0 ${i === 0 ? 'opacity-100' : 'opacity-0'}`;
+            slide.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('${url}?w=1920')`;
+            slidesContainer.appendChild(slide);
+        });
+
+        function showSlide(n) {
+            document.querySelectorAll('.hero-slide').forEach((s, i) => s.style.opacity = i === n ? '1' : '0');
+            current = n;
+        }
+        function nextSlide() { showSlide((current + 1) % 3); }
+        function prevSlide() { showSlide((current - 1 + 3) % 3); }
+        setInterval(nextSlide, 5000);
+
+        // Doctors
+        const doctors = [
+            {name: "د. أحمد الشريف", spec: "استشاري قلب", img: "https://randomuser.me/api/portraits/men/32.jpg"},
+            {name: "د. سارة محمد", spec: "استشارية نساء وتوليد", img: "https://randomuser.me/api/portraits/women/44.jpg"},
+            {name: "د. خالد حسن", spec: "استشاري مخ وأعصاب", img: "https://randomuser.me/api/portraits/men/45.jpg"},
+            {name: "د. فاطمة علي", spec: "استشارية أطفال", img: "https://randomuser.me/api/portraits/women/65.jpg"}
+        ];
+
+        const grid = document.getElementById('doctors-grid');
+        doctors.forEach(d => {
+            const div = document.createElement('div');
+            div.className = "bg-white rounded-3xl overflow-hidden shadow card-hover";
+            div.innerHTML = `
+                <img src="${d.img}" class="w-full h-64 object-cover">
+                <div class="p-6 text-center">
+                    <h4 class="font-bold text-xl">${d.name}</h4>
+                    <p class="text-emerald-600">${d.spec}</p>
+                </div>
+            `;
+            grid.appendChild(div);
+        });
+    </script>
+</body>
+</html>
